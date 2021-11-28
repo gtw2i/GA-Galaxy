@@ -34,7 +34,7 @@ RM= /bin/rm -f
 
 
 all: standard 
-standard: basic_run 
+standard: basic_run basic_run_unpreturbed mod_run orb_run
 unp: basic_run_unpreturbed
 unp2: unpreturbed_only
 c: test.o
@@ -62,6 +62,9 @@ process_pnm: process_pnm.c
 
 init_module.o: init_module.f90
 	$(F90) -c -g init_module.f90
+
+init_module_mod.o: init_module_mod.f90
+	$(F90) -c -g init_module_mod.f90
 
 parameters_module.o: parameters_module.f90
 	$(F90) -c -g parameters_module.f90
@@ -93,6 +96,11 @@ basic_run_unpreturbed.o: basic_run_unpreturbed.f90 parameters_module.o
 unpreturbed_only.o: unpreturbed_only.f90 parameters_module.o
 	$(F90) -c -g unpreturbed_only.f90
 
+mod_run.o: mod_run.f90 parameters_module.o
+	$(F90) -c -g mod_run.f90
+
+orb_run.o: orb_run.f90 parameters_module.o
+	$(F90) -c -g orb_run.f90
 
 
 ################
@@ -119,6 +127,19 @@ unpreturbed_only: parameters_module.o io_module.o \
 	df_module.o setup_module.o io_module.o  \
 	 init_module.o integrator.o 
 
+mod_run: parameters_module.o io_module.o \
+	df_module.o setup_module.o \
+	integrator.o init_module_mod.o mod_run.o 
+	$(F90) -o mod_run -g mod_run.o parameters_module.o \
+	df_module.o setup_module.o io_module.o  \
+	 init_module_mod.o integrator.o $(LIBS)
+
+orb_run: parameters_module.o io_module.o \
+	df_module.o setup_module.o \
+	integrator.o init_module.o orb_run.o 
+	$(F90) -o orb_run -g orb_run.o parameters_module.o \
+	df_module.o setup_module.o io_module.o  \
+	 init_module.o integrator.o $(LIBS)
 
 #align_module.o
 

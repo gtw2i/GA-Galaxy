@@ -248,8 +248,8 @@ end subroutine standard_galaxy1
   nstep = 500
 
   ! particle numbers for the total and each disk
-  n1 = 10000
-  n2 = 10000
+  n1 = 1000
+  n2 = 1000
   n = n2 + n2
 
 
