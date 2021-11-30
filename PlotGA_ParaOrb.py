@@ -58,17 +58,10 @@ def main():
 	ext     = "_combined.txt"
 	pFile   = zooBase + ext
 	
-	fileInd   = "12"
-#	fileInd   = "SeedTest"
+	fileInd   = "test"
 	targetInd = 0
 	
-#	outBase = "Results_GA_" + zooBase + "_" + fileInd + "_"
-#	outBase = "Results_GA-Paper_" + zooBase + "_" + fileInd + "_"
-#	outBase = "Results_GA-Best_" + zooBase + "_" + fileInd + "_"
-	
-#	outBase = "Results_GA-Roughshod_" + zooBase + "_" + fileInd + "_"
-#	outBase = "Results_GA-Roughshod-Steps_" + zooBase + "_" + fileInd + "_"
-	outBase   = "Results_GA-Roughshod_ReuseThreads_" + zooBase + "_" + fileInd + "_"
+	outBase = "Results_GA_" + zooBase + "_" + fileInd + "_"
 	
 	shrink = 1.0
 	

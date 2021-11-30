@@ -9,13 +9,17 @@
 # Harlie settings
 F77 = g77
 F90 = gfortran -g 
-LIBS = -L/usr/local/pgplot_gnu/pgplot -lpgplot -lpng -lz -L/usr/X11R6/lib -lX11
+#LIBS = -L/usr/local/pgplot_gnu/pgplot -lpgplot -lpng -lz -L/usr/X11R6/lib -lX11
+LIBS = -L/usr/local/pgplot_gnu/pgplot -lpng -lz -L/usr/X11R6/lib -lX11
 FLAG = 
 
 # Macintosh settings
 F77 = gfortran
 F90 = gfortran -g 
-LIBS = -L/sw/lib/pgplot -lpgplot -L/sw/lib -lpng -lz \
+#LIBS = -L/sw/lib/pgplot -lpgplot -L/sw/lib -lpng -lz \
+#	-L/usr/X11R6/lib -lX11 -L/sw/lib -laquaterm \
+#	-Wl,-framework -Wl,Foundation
+LIBS = -L/sw/lib/pgplot -L/sw/lib -lpng -lz \
 	-L/usr/X11R6/lib -lX11 -L/sw/lib -laquaterm \
 	-Wl,-framework -Wl,Foundation
 FLAG = 
@@ -25,7 +29,8 @@ FLAG =
 F77 = gfortran
 F90 = gfortran -pg -fbounds-check -Wall -fimplicit-none
 F90 = gfortran -O3
-LIBS = -L/usr/local/pgplot_gnu/pgplot -lpgplot -lpng -lz -L/usr/X11R6/lib -lX11
+#LIBS = -L/usr/local/pgplot_gnu/pgplot -lpgplot -lpng -lz -L/usr/X11R6/lib -lX11
+LIBS = -L/usr/local/pgplot_gnu/pgplot -lpng -lz -L/usr/X11R6/lib -lX11
 FLAG = 
 
 

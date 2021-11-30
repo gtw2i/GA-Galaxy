@@ -53,18 +53,18 @@ def main():
 	ext     = "_combined.txt"
 	pFile   = zooBase + ext
 	
-	fileInd   = "12"
+	fileInd   = "test"
 	
 	targetInd = 0
-	outBase   = "Results_GA-Roughshod_ReuseThreads_" + zooBase + "_" + fileInd + "_"
+	outBase   = "Results_GA_" + zooBase + "_" + fileInd + "_"
 	
-	nProc     = 2**6	# number of threads
+	nProc     = 2**2	# number of threads
 	
 	# GA params
-	nPop      = 2**8	# size of population at each step
-	nGen      = 2**7	# number of generations
-	nKeep     = 2**2	# elitism
-#	nKeep     = 0		# elitism
+	nPop      = 2**2	# size of population at each step
+	nGen      = 2**1	# number of generations
+#	nKeep     = 2**2	# elitism
+	nKeep     = 0		# elitism
 	nPhase    = 2
 	
 	# image params
