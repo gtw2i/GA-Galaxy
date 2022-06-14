@@ -1,21 +1,20 @@
 # Graham West
 from copy import deepcopy
-import sys 
-import time 
+#import sys 
+#import time 
+import pandas as pd
 import random
 import numpy as np
 import numpy.linalg as LA
 import math
-import pandas as pd
 from subprocess import call
-from scipy import optimize
 from scipy import misc
 from matplotlib import pyplot as plt
-from matplotlib import image as img
+#from matplotlib import image as img
 
 import pickle
 #import cv2
-import multiprocessing as mp
+#import multiprocessing as mp
 import threading as thr
 from threading import Thread
 import os
@@ -24,7 +23,7 @@ import Queue
 
 import socket as skt
 
-import glob
+#import glob
 
 from math import sin
 from math import cos

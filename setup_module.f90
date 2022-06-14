@@ -752,8 +752,6 @@ end subroutine perturber_position
       distrb = exp(-r1*r1*rscale(1) - rscale(2)*r1 - rscale(3) )
     endif
 
-#	distrb = 1
-
     return
   end function distrb
 
